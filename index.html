@@ -9,29 +9,37 @@
 
 <body>
  <div class="container">
-     <button class="btn btn-primary" type="button" id="readEmailButton">Import Data</button>
     <form>
         <div class="mb-3">
             <label for="InputName" class="form-label">Name</label>
-            <input type="text" class="form-control" id="InputName" aria-describedby="emailHelp">
+            <input type="text" class="form-control" id="InputName" >
             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
           </div>
           <div class="mb-3">
             <label for="subject" class="form-label">subject</label>
-            <input type="text" class="form-control" id="subject" aria-describedby="emailHelp">
+            <input type="text" class="form-control" id="subject" >
           </div>
         <div class="mb-3">
           <label for="InputEmail1" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp">
+          <input type="email" class="form-control" id="InputEmail1" >
           <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
-       
-       
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="tel" class="form-control" id="phone" >
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea  class="form-control" id="message" ></textarea>
+          </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
  </div>
-    
-    
+    <button type="button" id="readEmailButton">Read</button>
+    <h1>Readdata</h1>
+    <div id="data">
+
+    </div>
 
 </body>
 
