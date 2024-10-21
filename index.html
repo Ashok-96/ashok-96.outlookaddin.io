@@ -31,7 +31,8 @@
         Office.context.mailbox.item.body.getAsync("text", function(result) {
             console.log(Office.context.mailbox.item)
         if (result.status === Office.AsyncResultStatus.Succeeded) {
-            document.getElementById("data").innerHTML(Office.context.mailbox.item.body.displayName) 
+            console.log(Office.context.mailbox.item.body.from)
+        console.log(Office.context.mailbox.item.body.displayName)
         } else {
             console.error("Error reading email body: " + result.error.message);
         }
