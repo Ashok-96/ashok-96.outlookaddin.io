@@ -17,22 +17,21 @@
 <script>
     var data=document.getElementById('data');
   var hold=Office.context.mailbox.item;
-    Office.onReady((info) => {
-        var hold=Office.context.mailbox.item;
-        console.log(Office.context.mailbox.item)
-        if (info.host === Office.HostType.Outlook) {
-            document.getElementById("helloButton").onclick = sayHello;
+  Office.onReady(function(info) {
+    if (info.host === Office.HostType.Outlook) {
+        document.getElementById("readEmailButton").onclick = readSelectedEmail;
+    }
+});
+
+function readSelectedEmail() {
+    Office.context.mailbox.item.body.getAsync("text", function(result) {
+        if (result.status === Office.AsyncResultStatus.Succeeded) {
+            document.getElementById("data").innerText = result.value;
+        } else {
+            console.error("Error reading email body: " + result.error.message);
         }
     });
-
-    /**
-     * Writes 'Hello world!' to a new message body.
-     */
- 
-    async function sayHello() {
-        const inboxItems = await Office.context.mailbox.item.getAsync(Office.CoercionType.Html);
-        data.Html(inboxItems.value);
-    }
+}
 
 </script>
 
