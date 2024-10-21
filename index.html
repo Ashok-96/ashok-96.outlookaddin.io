@@ -8,22 +8,23 @@
 </head>
 
 <body>
+ <div class="container">
     <form>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-  </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+        <div class="mb-3">
+            <label for="InputName" class="form-label">Name</label>
+            <input type="email" class="form-control" id="InputName" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+        <div class="mb-3">
+          <label for="InputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+       
+       
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+ </div>
     <button type="button" id="readEmailButton">Read</button>
     <h1>Readdata</h1>
     <div id="data">
@@ -48,8 +49,11 @@
         Office.context.mailbox.item.body.getAsync("text", function(result) {
             console.log(Office.context.mailbox.item)
         if (result.status === Office.AsyncResultStatus.Succeeded) {
-            console.log(Office.context.mailbox.item.from.emailAddress)
-        console.log(Office.context.mailbox.item.from.displayName)
+            let Email=document.getElementById('InputEmail1')
+            let InputName=document.getElementById('InputName')
+            Email.innerText=Office.context.mailbox.item.from.emailAddress
+            InputName.innerText=Office.context.mailbox.item.from.displayName;
+      
         } else {
             console.error("Error reading email body: " + result.error.message);
         }
