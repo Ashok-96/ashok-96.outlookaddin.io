@@ -51,7 +51,7 @@
         if (result.status === Office.AsyncResultStatus.Succeeded) {
             let Email=document.getElementById('InputEmail1')
             let InputName=document.getElementById('InputName')
-            Email.value =Office.context.mailbox.item.from.emailAddress
+            Email.value =1
             InputName.value =Office.context.mailbox.item.from.displayName;
       
         } else {
