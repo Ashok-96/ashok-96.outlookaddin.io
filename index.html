@@ -28,7 +28,7 @@ function readSelectedEmail() {
     alert('sd');
     Office.context.mailbox.item.body.getAsync("text", function(result) {
         if (result.status === Office.AsyncResultStatus.Succeeded) {
-            document.getElementById("data").innerText = result.value;
+            document.getElementById("data").html = result.value;
         } else {
             console.error("Error reading email body: " + result.error.message);
         }
