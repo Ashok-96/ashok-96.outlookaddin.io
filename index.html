@@ -59,7 +59,18 @@
         var hold=Office.context.mailbox.item;
         console.log(Office.context.mailbox.item)
         if (info.host === Office.HostType.Outlook) {
-            document.getElementById("readEmailButton").onclick = sayHello;
+              Email.value=Office.context.mailbox.item.from.emailAddress
+            InputName.value=Office.context.mailbox.item.from.displayName;
+            subject.value=Office.context.mailbox.item.subject;
+        Office.context.mailbox.item.body.getAsync("text", function(result) {
+          
+        if (result.status === Office.AsyncResultStatus.Succeeded) {
+          
+            message.value=result.value;
+        } else {
+            console.error("Error reading email body: " + result.error.message);
+        }
+    })
         }
     });
 
