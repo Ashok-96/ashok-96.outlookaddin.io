@@ -2,23 +2,23 @@
 <html>
 
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Office JavaScript API -->
     <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
 </head>
 
 <body>
-        <img src="https://paramantra.us/aldius/images/paramantra.png" />
-    <p>This add-in will insert the text 'Hello world!' in a new message.</p>
-    <button id="helloButton">Say hello</button>
+    <div id="data">
 
-    <!-- The following image URL tracks diagnostic data for this sample add-in. Please remove the image tag if you reuse this sample in your own code project. -->
+    </div>
 
 </body>
 
 <script>
-
+    var data=document.getElementById('data');
+  var hold=Office.context.mailbox.item;
     Office.onReady((info) => {
+        var hold=Office.context.mailbox.item;
+        console.log(Office.context.mailbox.item)
         if (info.host === Office.HostType.Outlook) {
             document.getElementById("helloButton").onclick = sayHello;
         }
@@ -27,21 +27,10 @@
     /**
      * Writes 'Hello world!' to a new message body.
      */
-    function sayHello() {
-        Office.context.mailbox.item.body.setAsync(
-            "Hello world!",
-            {
-                coercionType: "html", // Write text as HTML
-            },
-
-            // Callback method to check that setAsync succeeded
-            function (asyncResult) {
-                if (asyncResult.status ==
-                    Office.AsyncResultStatus.Failed) {
-                    write(asyncResult.error.message);
-                }
-            }
-        );
+ 
+    async function sayHello() {
+        const inboxItems = await Office.context.mailbox.item.getAsync(Office.CoercionType.Html);
+        data.Html(inboxItems.value);
     }
 
 </script>
