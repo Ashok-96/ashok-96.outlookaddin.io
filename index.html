@@ -32,7 +32,7 @@
           </div>
           <div class="mb-3">
             <label for="message" class="form-label">Message</label>
-            <textarea  class="form-control" id="message" ></textarea>
+            <textarea  class="form-control" rows="20" id="message" ></textarea>
           </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
@@ -57,13 +57,14 @@
 
  
    async function sayHello() {
+    
+         Email.value=Office.context.mailbox.item.from.emailAddress
+            InputName.value=Office.context.mailbox.item.from.displayName;
+            subject.value=Office.context.mailbox.item.subject;
         Office.context.mailbox.item.body.getAsync("text", function(result) {
           
         if (result.status === Office.AsyncResultStatus.Succeeded) {
           
-            Email.value=Office.context.mailbox.item.from.emailAddress
-            InputName.value=Office.context.mailbox.item.from.displayName;
-            subject.value=Office.context.mailbox.item.subject;
             message.value=result.value;
         } else {
             console.error("Error reading email body: " + result.error.message);
