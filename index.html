@@ -9,33 +9,41 @@
 
 <body>
  <div class="container">
-    <h3 class="text-center">Create Lead</h3>
-    <button type="button" class="btn btn-primary" id="readEmailButton">Fetch Data</button>
-    <form>
-        <div class="mb-3">
-            <label for="InputName" class="form-label">Name</label>
-            <input type="text" class="form-control" id="InputName" >
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-          </div>
-          <div class="mb-3">
-            <label for="subject" class="form-label">subject</label>
-            <input type="text" class="form-control" id="subject" >
-          </div>
-        <div class="mb-3">
-          <label for="InputEmail1" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="InputEmail1" >
-          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="text-center">Create Lead</h3>
+            <button type="button" id="readEmailButton">Fetch Data</button>
         </div>
-        <div class="mb-3">
-            <label for="phone" class="form-label">Phone</label>
-            <input type="tel" class="form-control" id="phone" >
-          </div>
-          <div class="mb-3">
-            <label for="message" class="form-label">Message</label>
-            <textarea  class="form-control" rows="10" id="message" ></textarea>
-          </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+        <div class="card-body">
+            <form>
+                <div class="mb-3">
+                    <label for="InputName" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="InputName" >
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="subject" class="form-label">subject</label>
+                    <input type="text" class="form-control" id="subject" >
+                  </div>
+                <div class="mb-3">
+                  <label for="InputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="InputEmail1" >
+                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="tel" class="form-control" id="phone" >
+                  </div>
+                  <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea  class="form-control" rows="50" id="message" ></textarea>
+                  </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+    </div>
+   
+   
  </div>
   
 
