@@ -41,18 +41,7 @@
         console.log(Office.context.mailbox.item)
         if (info.host === Office.HostType.Outlook) {
             document.getElementById("readEmailButton").onclick = sayHello;
-             Office.context.mailbox.item.body.getAsync("text", function(result) {
-            console.log(Office.context.mailbox.item)
-        if (result.status === Office.AsyncResultStatus.Succeeded) {
-            let Email=document.getElementById('InputEmail1')
-            let InputName=document.getElementById('InputName')
-            Email.value =Office.context.mailbox.item.from.emailAddress
-            InputName.value =Office.context.mailbox.item.from.displayName;
-      
-        } else {
-            console.error("Error reading email body: " + result.error.message);
         }
-        })
     });
 
  
@@ -62,8 +51,8 @@
         if (result.status === Office.AsyncResultStatus.Succeeded) {
             let Email=document.getElementById('InputEmail1')
             let InputName=document.getElementById('InputName')
-            Email.value =Office.context.mailbox.item.from.emailAddress
-            InputName.value =Office.context.mailbox.item.from.displayName;
+            Email.innerText=Office.context.mailbox.item.from.emailAddress
+            InputName.innerText=Office.context.mailbox.item.from.displayName;
       
         } else {
             console.error("Error reading email body: " + result.error.message);
