@@ -9,6 +9,8 @@
 
 <body>
  <div class="container">
+         <button type="button" class="btn btn-primary" id="readEmailButton">Read</button>
+
     <form>
         <div class="mb-3">
             <label for="InputName" class="form-label">Name</label>
@@ -24,11 +26,8 @@
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
  </div>
-    <button type="button" id="readEmailButton">Read</button>
-    <h1>Readdata</h1>
-    <div id="data">
-
-    </div>
+    
+   
 
 </body>
 
@@ -50,8 +49,8 @@
         if (result.status === Office.AsyncResultStatus.Succeeded) {
             let Email=document.getElementById('InputEmail1')
             let InputName=document.getElementById('InputName')
-            Email.innerText=Office.context.mailbox.item.from.emailAddress
-            InputName.innerText=Office.context.mailbox.item.from.displayName;
+            Email.value=Office.context.mailbox.item.from.emailAddress
+            InputName.value=Office.context.mailbox.item.from.displayName;
       
         } else {
             console.error("Error reading email body: " + result.error.message);
