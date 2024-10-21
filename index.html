@@ -29,7 +29,7 @@
  
     async function sayHello() {
         const inboxItems = await Office.context.mailbox.item.getAsync(Office.CoercionType.Html);
-        data.Html(inboxItems.value);
+        data.Html(Office);
     }
 
 </script>
