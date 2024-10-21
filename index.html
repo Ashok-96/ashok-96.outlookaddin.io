@@ -27,10 +27,15 @@
     });
 
  
-    async function sayHello() {
-        const inboxItems = await Office.context.mailbox.item.getAsync(Office.CoercionType.Html);
-        data.Html(Office);
-    }
+   async function sayHello() {
+        Office.context.mailbox.item.body.getAsync("text", function(result) {
+        if (result.status === Office.AsyncResultStatus.Succeeded) {
+            document.getElementById("data").Html(result.value) 
+        } else {
+            console.error("Error reading email body: " + result.error.message);
+        }
+    })
+}
 
 </script>
 
