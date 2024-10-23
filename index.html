@@ -91,7 +91,11 @@
                            node.appendChild(textnode)
                     phonelist.appendChild(node)
                 }
-                 phonelist.appendChild(`<option value='na'>Not in list</option>`);
+                 var node = document.createElement("option");
+                    var textnode = document.createTextNode('Not in list');
+                           node.appendChild(textnode)
+                    phonelist.appendChild(node)
+                
             }
         } else {
             console.error("Error reading email body: " + result.error.message);
