@@ -78,7 +78,7 @@
           
             message.value=result.value;
              var string =  message.value
-            var getNum = string.match(/(\d+)/g);
+            var getNum = string.match(/(\d{10,})/g);
           
             if(getNum.length==1){
                   phone.val=getNum[0];
@@ -86,9 +86,9 @@
                  phoneman.removeClass('d-none')
             }else if(getNum.length>1){
                 for(let i=0;i<=getNum.length-1;i++){
-                    phonelist.append(`<option value="${getNum[i]}">${getNum[i]}</option>`)
+                    phonelist.appendChild(`<option value="${getNum[i]}">${getNum[i]}</option>`)
                 }
-                 phonelist.append(`<option value='na'>Not in list</option>`);
+                 phonelist.appendChild(`<option value='na'>Not in list</option>`);
             }
         } else {
             console.error("Error reading email body: " + result.error.message);
