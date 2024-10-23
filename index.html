@@ -73,6 +73,7 @@
              var string =  message.value
             var getNum = string.match(/(\d+)/g);
             phone.val=getNum;
+            console.log(getNum)
         } else {
             console.error("Error reading email body: " + result.error.message);
         }
