@@ -78,7 +78,7 @@
           
             message.value=result.value;
              var string =  message.value
-            var getNum = string.match(/(\d{10,})/g);
+            var getNum = string.match(/(\d+)/g);
           
             if(getNum.length==1){
                   phone.val=getNum[0];
