@@ -86,11 +86,7 @@
              var string =  message.value
             var getNum = string.match(/(\d+)/g);
           
-            if(getNum.length==1){
-                  phone.val=getNum;
-                phonelist.addClass('d-none')
-                 phoneman.removeClass('d-none')
-            }else if(getNum.length>1){
+             if(getNum.length>0){
                 for(let i=0;i<=getNum.length-1;i++){
                    
                     if(getNum[i].length>=10){
