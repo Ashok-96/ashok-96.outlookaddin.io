@@ -86,7 +86,10 @@
                  phoneman.removeClass('d-none')
             }else if(getNum.length>1){
                 for(let i=0;i<=getNum.length-1;i++){
-                    phonelist.appendChild(`<option value="${getNum[i]}">${getNum[i]}</option>`)
+                    var node = document.createElement("option");
+                    var textnode = document.createTextNode(getNum[i]);
+                           node.appendChild(textnode)
+                    phonelist.appendChild(node)
                 }
                  phonelist.appendChild(`<option value='na'>Not in list</option>`);
             }
