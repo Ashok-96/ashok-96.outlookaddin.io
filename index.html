@@ -114,7 +114,7 @@
             
 $('#leadmform').on('submit',function(e){
     e.preventDefault();
-    console.log($('#leadmform').serialize())
+    console.log(JSON.parse($('#leadmform').serialize()))
 })
 
 </script>
