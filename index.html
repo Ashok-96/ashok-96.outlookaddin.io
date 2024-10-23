@@ -106,8 +106,10 @@
     });
 
     $('input[type=checkbox]').change(function(){
-                  $('#phonelist').hasClass('d-none')?( $('#phonelist').removeClass('d-none')):( $('#phonelist').addClass('d-none'));
-                   $('#phoneman').hasClass('d-none')?( $('#phoneman').removeClass('d-none')):( $('#phoneman').addClass('d-none'));
+                   $('#phonelist').hasClass('d-none')?( $('#phonelist').removeClass('d-none')):( $('#phonelist').addClass('d-none'),$('#phonelist').removeAttr('required'));
+                   $('#phoneman').hasClass('d-none')?( $('#phoneman').removeClass('d-none')):( $('#phoneman').addClass('d-none'),$('#phoneman').removeAttr('required'));
+                    
+             })
                     
              })
 $('#leadmform').on('submit',function(e){
