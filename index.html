@@ -56,10 +56,11 @@
     var Email=document.getElementById('InputEmail1')
     var InputName=document.getElementById('InputName')
     var subject=document.getElementById('subject')
+     var phone=document.getElementById('phone')
     var message=document.getElementById('message')
     Office.onReady((info) => {
         var hold=Office.context.mailbox.item;
-        console.log(Office.context.mailbox.item)
+       
         if (info.host === Office.HostType.Outlook) {
               Email.value=Office.context.mailbox.item.from.emailAddress
             InputName.value=Office.context.mailbox.item.from.displayName;
@@ -69,6 +70,9 @@
         if (result.status === Office.AsyncResultStatus.Succeeded) {
           
             message.value=result.value;
+             var string = html
+            var getNum = string.match(/(\d+)/g);
+            phone.val=getNum;
         } else {
             console.error("Error reading email body: " + result.error.message);
         }
@@ -77,21 +81,19 @@
     });
 
  
-   async function sayHello() {
-    
-         Email.value=Office.context.mailbox.item.from.emailAddress
-            InputName.value=Office.context.mailbox.item.from.displayName;
-            subject.value=Office.context.mailbox.item.subject;
-        Office.context.mailbox.item.body.getAsync("text", function(result) {
-          
-        if (result.status === Office.AsyncResultStatus.Succeeded) {
-          
-            message.value=result.value;
-        } else {
-            console.error("Error reading email body: " + result.error.message);
-        }
-    })
-}
+  function(html) {
+
+            //Find numbers in a mail body and replace with create lead link
+            var string = html
+            var getNum = string.match(/(\d+)/g);
+
+            for (i = 0; i < getNum.length; i++) {
+                if (getNum[i].length >= 10) {
+                    string = string.replace(getNum[i],
+                        '<a href="javascript:void(0);" onclick="create_lead_from_mail(' + recNo + ',' + getNum[i] + ')">' +
+                        getNum[i] + '</a>');
+                };
+            }
 
 </script>
 
