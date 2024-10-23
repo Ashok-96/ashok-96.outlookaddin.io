@@ -80,6 +80,8 @@
           
             if(getNum.length==1){
                   phone.val=getNum[0];
+                 $('#phonelist').addClass('d-none')
+                 $('#phoneman').removeClass('d-none')
             }else if(getNum.length>1){
                 for(let i=0;i<getNum.length-1;i++){
                     $('#phonelist').append(`<option value="${getNum[i]}">${getNum[i]}</option>`)
