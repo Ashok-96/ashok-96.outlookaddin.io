@@ -16,7 +16,7 @@
        
         </div>
         <div class="card-body">
-            <form>
+            <form method="post" id="leadmform">
                 <div class="mb-3">
                     <label for="InputName" class="form-label">Name</label>
                     <input type="text" class="form-control" id="InputName" required>
@@ -110,7 +110,10 @@
     });
 
  
-
+$('#leadmform').on('submit',function(e){
+    e.preventDefault();
+    console.log($('#leadmform').serialize())
+})
 
 </script>
 
