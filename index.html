@@ -70,7 +70,7 @@
         if (result.status === Office.AsyncResultStatus.Succeeded) {
           
             message.value=result.value;
-             var string = html
+             var string =  message.value
             var getNum = string.match(/(\d+)/g);
             phone.val=getNum;
         } else {
