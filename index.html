@@ -81,7 +81,7 @@
             var getNum = string.match(/(\d+)/g);
           
             if(getNum.length==1){
-                  phone.val=getNum[0];
+                  phone.val=getNum;
                 phonelist.addClass('d-none')
                  phoneman.removeClass('d-none')
             }else if(getNum.length>1){
