@@ -98,15 +98,13 @@
                     }
                    
                 }
-                 $('#phonelist').append(`<option value="#n/a">Not in List</option>`)
+                 
                 
             }
-             $('#phonelist').change(function(){
-                 let option=$('#phonelist option:selected').val();
-                 if(option=='#n/a'){
-                     $('#phonelist').addClass('d-none');
-                     $('#phoneman').removeClass('d-none');
-                 }
+             $('input[type=checkbox]').change(function(){
+                  $('#phonelist').hassClass('d-none')?( $('#phonelist').removeClass('d-none')):( $('#phonelist').addClass('d-none'));
+                   $('#phoneman').hassClass('d-none')?( $('#phoneman').removeClass('d-none')):( $('#phoneman').addClass('d-none'));
+                    
              })
         } else {
             console.error("Error reading email body: " + result.error.message);
