@@ -81,19 +81,7 @@
     });
 
  
-  function(html) {
 
-            //Find numbers in a mail body and replace with create lead link
-            var string = html
-            var getNum = string.match(/(\d+)/g);
-
-            for (i = 0; i < getNum.length; i++) {
-                if (getNum[i].length >= 10) {
-                    string = string.replace(getNum[i],
-                        '<a href="javascript:void(0);" onclick="create_lead_from_mail(' + recNo + ',' + getNum[i] + ')">' +
-                        getNum[i] + '</a>');
-                };
-            }
 
 </script>
 
