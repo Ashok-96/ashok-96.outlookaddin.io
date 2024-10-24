@@ -143,6 +143,8 @@ $(function(){
    
       $.ajax({
           url:'https://paramantra.us/paramantra/receive/outlook',
+        headers: {  'Access-Control-Allow-Origin': '*' },
+
           method:'POST',
           dataType: 'json', // what type of data do we expect back from the server
           crossDomain: true,
