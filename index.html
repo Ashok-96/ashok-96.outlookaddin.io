@@ -145,6 +145,7 @@ $(function(){
           url:'https://paramantra.us/paramantra/receive/outlook',
           method:'POST',
           dataType: 'json', // what type of data do we expect back from the server
+          crossDomain: true,
           data:{'source':source,'data':JSON.stringify(arr)},
           success:function(e){
               console.log(JSON.parse(e))
