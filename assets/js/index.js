@@ -108,7 +108,7 @@ const options={
   body:JSON.stringify(arr),
 
 }
-fetch('action.php',options)
+fetch('https://mirror.paramantra.us/outlook-addin/action.php',options)
 .then(response=>{
   
   if(!response.ok){
