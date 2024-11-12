@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <script src="assets/js/jquery.min.js" ></script>
+
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <!-- Office JavaScript API -->
+    <script src="assets/js/bootstrap.min.js" ></script>
+
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>   
+
+</head>
+
+<body>
+  <div class="container p-2">
+  <div class="text-center">
+     <div class="preloader d-none">
+      <div class="spinner-border text-primary" role="status">
+        
+      </div>
+      <span class="">Loading...</span>
+     </div>
+    </div>
+     <div class="card cform d-none">
+         
+         <div class="card-body">
+        
+             <form method="post" id="leadmform">
+                 <div class="mb-3">
+                     <label for="InputName" class="form-label">Name</label>
+                     <input type="text" class="form-control" name="f_name" id="InputName" required value="">
+                   </div>
+                   <div class="mb-3">
+                     <label for="subject" class="form-label">subject</label>
+                     <input type="text" class="form-control" name="subject" id="subject" value="" required>
+                   </div>
+                 <div class="mb-3">
+                   <label for="InputEmail1" class="form-label">Email address</label>
+                   <input type="email" class="form-control" name="phonefax" id="InputEmail1" value="" required>
+                 </div>
+                 <div class="mb-3">
+                   
+                     <label for="phoneman" class="form-label">Phone</label>
+                       <div class="form-check form-switch">
+                      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                      <label class="form-check-label" for="flexSwitchCheckDefault"><span id="msg">Click Here to Enter Manually</span></label>
+                    </div>
+                         <input type="tel"  class="form-control d-none" name="phone"  title="phone number must be 10 digits" id="phoneman" value=""  placeholder="Please enter the phone number">
+                     <select class="form-control" title="phonelist" name="phone" id="phonelist"   required>
+                         <option value=''>--select--from--list</option>
+                         
+                     </select>
+                 
+                   </div>
+                   <div class="mb-3">
+                     <label for="message" class="form-label">Message</label>
+                     <textarea name="notes" class="form-control" rows="8" id="message" ></textarea>
+                   </div>
+                 <div class="mb-3">
+                     <label for="phone" class="form-label">Username</label>
+                     <input type="text" class="form-control" name="rep_id" id="username" value="" required placeholder="Enter Your Paramantra Username" required>
+                   </div>
+                   
+                   
+         </div>
+         <div class="card-footer text-end">
+          <button type="submit" id="submitapi" class="btn btn-primary">Submit</button>
+        </form>
+         </div>
+     </div>
+    
+    
+  </div>
+   
+
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Alert</h1>
+         
+        </div>
+        <div class="modal-body">
+          <div id="smessage">
+
+          </div>
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" id="bmodal" class="btn btn-secondary" data-bs-dismiss="modal">Okay</button>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel2" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel2">Warning</h1>
+          
+        </div>
+        <div class="modal-body">
+          <div id="smessage">
+            <h5>Unauthorized Access!</h5>
+          </div>
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" id="bmodal2" class="btn btn-secondary" data-bs-dismiss="modal">Okay</button>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script  src="assets/js/index.js"></script>
+
+
+
+</html>
