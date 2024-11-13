@@ -16,10 +16,9 @@ var phonelist=document.getElementById('phonelist')
           Office.context.auth.getAccessTokenAsync({ 
             forceConsent: false, // Set to true if you want the user to be prompted for consent
         }, function (result) {
-            if (result.status === "succeeded") {
-              var accessToken = result.value; // This is the generated access token
-              console.log("Access Token:", accessToken);
-            }
+            // This is the generated access token
+              console.log( result);
+            
           })
                 
         
