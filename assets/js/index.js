@@ -13,6 +13,16 @@ var phonelist=document.getElementById('phonelist')
        
         if (info.host === Office.HostType.Outlook) {
           $('.cform').removeClass('d-none')
+          Office.context.auth.getAccessTokenAsync({ 
+            forceConsent: false, // Set to true if you want the user to be prompted for consent
+        }, function (result) {
+            if (result.status === "succeeded") {
+              console.log(result.value)
+            }
+          })
+                var accessToken = result.value; // This is the generated access token
+                console.log("Access Token:", accessToken);
+        
           console.log( Office.context);
             Email.value=Office.context.mailbox.item.from.emailAddress
             InputName.value=Office.context.mailbox.item.from.displayName;
