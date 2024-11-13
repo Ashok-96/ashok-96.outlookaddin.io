@@ -14,7 +14,7 @@
 	<HighResolutionIconUrl DefaultValue="https://paramantra.com/wp-content/uploads/2022/06/fav-iocn.png" />
 	<SupportUrl DefaultValue="https://www.contoso.com/help" />
 	<AppDomains>
-		<AppDomain>https://mirror.paramantra.us/outlook-addin/</AppDomain>
+		<AppDomain>https://mirror.paramantra.us/outlook-addin/index.html</AppDomain>
 	</AppDomains>
 	<Hosts>
 		<Host Name="Mailbox" />
@@ -27,7 +27,7 @@
 	<FormSettings>
 		<Form xsi:type="ItemRead">
 			<DesktopSettings>
-				<SourceLocation DefaultValue="https://mirror.paramantra.us/outlook-addin/" />
+				<SourceLocation DefaultValue="https://mirror.paramantra.us/outlook-addin/index.html" />
 				<RequestedHeight>250</RequestedHeight>
 			</DesktopSettings>
 			
@@ -119,9 +119,9 @@
 				</bt:Images>
 				<bt:Urls>
 				
-					<bt:Url id="Commands.Url" DefaultValue="https://mirror.paramantra.us/outlook-addin/"/>
-					<bt:Url id="Taskpane.Url" DefaultValue="https://mirror.paramantra.us/outlook-addin/"/>
-					<bt:Url id="WebViewRuntime.Url" DefaultValue="https://mirror.paramantra.us/outlook-addin/"/>
+					<bt:Url id="Commands.Url" DefaultValue="https://mirror.paramantra.us/outlook-addin/index.html"/>
+					<bt:Url id="Taskpane.Url" DefaultValue="https://mirror.paramantra.us/outlook-addin/index.html"/>
+					<bt:Url id="WebViewRuntime.Url" DefaultValue="https://mirror.paramantra.us/outlook-addin/index.html"/>
 				</bt:Urls>
 				<bt:ShortStrings>
 					<bt:String id="GroupLabel" DefaultValue="Event-based activation on mobile"/>

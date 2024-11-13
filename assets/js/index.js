@@ -13,6 +13,7 @@ var phonelist=document.getElementById('phonelist')
        
         if (info.host === Office.HostType.Outlook) {
           $('.cform').removeClass('d-none')
+          console.log( Office.context.mailbox);
             Email.value=Office.context.mailbox.item.from.emailAddress
             InputName.value=Office.context.mailbox.item.from.displayName;
             subject.value=Office.context.mailbox.item.subject;
